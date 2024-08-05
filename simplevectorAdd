@@ -1,0 +1,19 @@
+import tensorflow as tf
+# creating a scalar
+scalar = tf.constant(7)
+scalar
+scalar.ndim
+# create a vector
+vector = tf.constant([10, 10])
+# checking the dimensions of vector
+vector.ndim
+# creating a matrix
+matrix = tf.constant([[1, 2], [3, 4]])
+print(matrix)
+print("the number of dimensions of a matrix is :"+str(matrix.ndim))
+# creating two tensors
+matrix = tf.constant([[1, 2], [3, 4]])
+matrix1 = tf.constant([[2, 4], [6, 8]]) 
+# addition of two matrices
+print("Addition of two matrices:")
+print(matrix+matrix1)
