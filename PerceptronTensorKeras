@@ -1,0 +1,22 @@
+import numpy as np
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+# Generate some example data for a logical OR operation
+X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+y = np.array([0, 1, 1, 1])
+# Define the perceptron model
+model = Sequential([
+ Dense(1, input_shape=(2,), activation='sigmoid', use_bias=True)
+])
+# Compile the model
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy'])
+# Train the model
+model.fit(X, y, epochs=1000, verbose=0)
+# Evaluate the model
+loss, accuracy = model.evaluate(X, y)
+print("Loss:", loss)
+print("Accuracy:", accuracy)
+# Make predictions
+predictions = model.predict(X)
+print("Predictions:", predictions.flatten())
